@@ -1,0 +1,20 @@
+{
+  "name": "panopta",
+  "version": "0.0.1",
+  "author": "Siebren zwerver",
+  "license": "Licensed under (Apache 2.0)",
+  "summary": "Unofficial Panopta module",
+  "source": "https://bitbucket.org/siebjee/panopta",
+  "project_page": "(https://forge.puppetlabs.com/siebjee/panopta)",
+  "issues_url": "https://bitbucket.org/siebjee/panopta/issues?status=new&status=open",
+  "tags": ["panopta"],
+  "operatingsystem_support": [
+    {
+    "operatingsystem": "Ubuntu",
+    "operatingsystemrelease": [ "14.04", "12.04", "10.04" ]
+    }
+   ]
+  "dependencies": [
+    { "name": "puppetlabs/stdlib", "version_requirement": ">=3.2.0 <5.0.0" },
+  ]
+}
