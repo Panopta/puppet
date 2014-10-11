@@ -1,4 +1,19 @@
 # = Class panopta::modules::nginx
 # Enables the nginx module of the Panopta Agent
-class panopta::modules::nginx inherits panopta::modules {
+define panopta::modules::nginx($url = $title) {
+	concat {"$::panopta_agent_config"
+		ensure	=> present
+	}
+
+	concat::fragment { 'nginx head':
+		target	=> "$::panopta_agent_config",
+		content	=> '[nignx]',
+		order		=> '01'
+	}
+
+	concat::fragment { 'url':
+		target	=> "$::panopta_agent_config",
+		content	=> "${url}",
+		order		=> '02'
+	}
 }
