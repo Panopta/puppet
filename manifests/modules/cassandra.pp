@@ -7,7 +7,7 @@ define panopta::modules::cassandra($location = $title) {
 
 	concat::fragment { 'cassandra head':
 		target	=> "$::panopta_agent_config",
-		content	=> '[cassabdra]',
+		content	=> '[cassandra]',
 		order		=> '01'
 	}
 
