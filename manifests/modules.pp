@@ -1,5 +1,80 @@
-# = Class panopta::modules::cassandra
+# == Define: panopta::modules
 # Enables and configures the panopta modules
+#
+# === Options:
+# Multiple options are allowed.
+#  [cassandra]
+#   Importand: Only enable this if you have not installed cassandra through the repository
+#   Options: true / false present / absent
+#  [cassandra_location]
+#   location to the cassandra installation
+#
+#  [haproxy]
+#   true / false / present / absent
+#  [haproxy_socket]
+#   location to the socket
+#
+#  [jboss]
+#   true / false / present / absent
+#  [jboss_username]
+#   jboss username
+#  [jboss_password]
+#   jboss password
+#  [jobss_url]
+#   jboss console url
+#
+#  [mysql]
+#   true / false / present / absent
+#  [mysql_username]
+#   MySQL username
+#  [mysql_password]
+#   MySQL Password
+#
+#  [nginx]
+#   true / false / present / absent
+#  [nginx_url]
+#   nginx status url page (use http://username:password@server.example.com if you use htaccess auth)
+#
+#  [oracle]
+#   true / false / present / absent
+#  [oracle_username]
+#   oracle username
+#  [oracle_password]
+#   oracle password
+#  [oracle_sid]
+#   databases to monitor. Use comma's to separate multiple databases to monitor
+#  [oracle_tns_ip] (optional)
+#   which IP oracle is listening on. Default: 127.0.0.1
+#
+#  [oracleWeblogic]
+#   true / false / present / absent
+#  [oracle_wl_username]
+#   oracle weblogic username
+#  [oracle_wl_password]
+#   oracle weblogic password
+#  [oracle_wl_home]
+#   oracle weblogic home
+#
+#  [packageUpgrades]
+#   Important: This allowes the puppet-agent user to do 'sudo apt-get' without password.
+#   true / false / present / absent
+#
+#  [postgresql]
+#   true / false / present / absent
+#  [postgresql_username]
+#   postgresql username
+#  [postgresql_password]
+#   postgresql password
+#
+#  [tomcat]
+#   true / false / present / absent
+#  [tomcat_username]
+#   tomcat username
+#  [tomcat_password]
+#   tomcat password
+#  [tomcat_url]
+#   tomcat console url
+
 define panopta::modules (
   $cassandra           = undef,
   $cassandra_location  = undef,
