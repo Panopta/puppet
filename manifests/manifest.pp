@@ -10,7 +10,8 @@ difine panopta::manifest(
 
   $manifestFile = '/etc/panopta-agent-manifest'
 	concat {"${manifestFile}"
-		ensure	=> present
+		ensure				 => present,
+		ensure_newline => true
 	}
 
 	concat::fragment { 'customer_key':
