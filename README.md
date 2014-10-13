@@ -51,7 +51,7 @@ panopta::modules {'title':
 ## List of supported modules with options and examples.
 
 ##### cassandra
-##### Please note that you only have to enable the cassandra module of you have installed cassandra yourself.
+##### Please note that you only have to enable the cassandra module of you have installed cassandra yourself through source.
 - cassandra_location => 'cassandra installation location'
 
 ##### haproxy
