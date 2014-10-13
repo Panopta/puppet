@@ -94,10 +94,19 @@ panopta::modules {'title':
 - tomcat_url      => 'tomcat console url'
 
 ## Limitations
+Supported Operating Systems:
+* Ubuntu 10.04
+* Ubuntu 12.04
+* Ubuntu 14.04
+
+* Debian 6
+* Debian 7
+
 This Module has been tested on:
+* Ubuntu 12.04
 * Ubuntu 14.04
 
 ## TODO
-* Testing Ubuntu 10.04, 12.04
+* Testing Ubuntu 10.04
 * Testing Debian 6, 7
 * Checks to ensure the correct values are given to ensure and ensure like parameters
