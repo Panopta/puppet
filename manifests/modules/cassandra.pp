@@ -1,7 +1,7 @@
 # = Class panopta::modules::cassandra
 # Enables the cassandra module of the Panopta Agent
 define panopta::modules::cassandra($location = $title) {
-	concat {"$::panopta_agent_config"
+	concat {"$::panopta_agent_config":
 		ensure	=> present
 	}
 

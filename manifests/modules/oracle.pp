@@ -1,7 +1,7 @@
 # = Class panopta::modules::oracle
 # Enables the oracle module of the Panopta Agent
 define panopta::modules::oracle($home, $sid, $username, $password, $tns_listener_ip = undef) {
-	concat {"$::panopta_agent_config"
+	concat {"$::panopta_agent_config":
 		ensure	=> present
 	}
 

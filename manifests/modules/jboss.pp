@@ -1,7 +1,7 @@
 # = Class panopta::modules::jboss
 # Enables the jboss module of the Panopta Agent
 define panopta::modules::jboss($username, $password, $url) {
-	concat {"$::panopta_agent_config"
+	concat {"$::panopta_agent_config":
 		ensure	=> present
 	}
 

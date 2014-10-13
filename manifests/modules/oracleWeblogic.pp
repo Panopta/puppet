@@ -1,7 +1,7 @@
 # = Class panopta::modules::oracleWeblogic
 # Enables the oracleWeblogic module of the Panopta Agent
 define panopta::modules::oracleWeblogic($home, $username, $password) {
-	concat {"$::panopta_agent_config"
+	concat {"$::panopta_agent_config":
 		ensure	=> present
 	}
 

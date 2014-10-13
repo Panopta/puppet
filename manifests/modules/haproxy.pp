@@ -1,7 +1,7 @@
 # = Class panopta::modules::haproxy
 # Enables the haproxy module of the Panopta Agent
 define panopta::modules::haproxy($socket = $title) {
-	concat {"$::panopta_agent_config"
+	concat {"$::panopta_agent_config":
 		ensure	=> present
 	}
 

@@ -1,7 +1,7 @@
 # = Class panopta::modules::tomcat
 # Enables the tomcat module of the Panopta Agent
 define panopta::modules::tomcat($username, $password, $ip, $port) {
-	concat {"$::panopta_agent_config"
+	concat {"$::panopta_agent_config":
 		ensure	=> present
 	}
 

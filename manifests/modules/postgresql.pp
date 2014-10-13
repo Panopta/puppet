@@ -1,7 +1,7 @@
 # = Class panopta::modules::postgresql
 # Enables the postgresql module of the Panopta Agent
 define panopta::modules::postgresql($username, $password) {
-	concat {"$::panopta_agent_config"
+	concat {"$::panopta_agent_config":
 		ensure	=> present
 	}
 
