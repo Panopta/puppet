@@ -5,7 +5,7 @@ define panopta::modules::nginx($url = $title) {
 		ensure	=> present
 	}
 
-	concat::fragment { 'nginx head':
+	concat::fragment { 'current config':
 		target				 => "$::panopta_agent_config",
 		ensure_newline => true,
 		content				 => "$::panopta_current_agent_config",
