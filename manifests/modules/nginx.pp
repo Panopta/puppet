@@ -8,14 +8,21 @@ define panopta::modules::nginx($url = $title) {
 	concat::fragment { 'nginx head':
 		target				 => "$::panopta_agent_config",
 		ensure_newline => true,
-		content				 => '[nignx]',
+		content				 => "$::panopta_current_agent_config",
 		order					 => '01'
+	}
+
+	concat::fragment { 'nginx head':
+		target				 => "$::panopta_agent_config",
+		ensure_newline => true,
+		content				 => '[nignx]',
+		order					 => '02'
 	}
 
 	concat::fragment { 'url':
 		target	       => "$::panopta_agent_config",
 		ensure_newline => true,
 		content				 => "${url}",
-		order		       => '02'
+		order		       => '03'
 	}
 }

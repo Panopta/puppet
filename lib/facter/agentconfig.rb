@@ -6,6 +6,6 @@ end
 
 Facter.add('panopta_current_agent_config') do
   setcode do
-    Facter::Util::Resolution.exec('cat ' + :panopta_agent_config)
+    Facter::Util::Resolution.exec('cat /etc/panopta-agent/panopta_agent.cfg')
   end
 end
