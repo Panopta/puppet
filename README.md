@@ -95,6 +95,7 @@ panopta::modules {'title':
 
 ## Limitations
 Supported Operating Systems
+
 * Ubuntu 10.04
 * Ubuntu 12.04
 * Ubuntu 14.04
@@ -103,6 +104,7 @@ Supported Operating Systems
 * Debian 7
 
 This Module has been tested on
+
 * Ubuntu 12.04
 * Ubuntu 14.04
 
