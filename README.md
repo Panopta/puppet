@@ -32,7 +32,7 @@ panopta{ 'title':
 Enabling a module:
 ```puppet
 panopta::modules {'title':
-  nginx     => present,
+  nginx     => true,
   nginx_url => 'http://server.example.com/server-status'
 }
 ```
@@ -40,9 +40,9 @@ panopta::modules {'title':
 Enabling multiple modules:
 ```puppet
 panopta::modules {'title':
-  nginx          => present,
+  nginx          => true,
   nginx_url      => 'http://server.example.com/server-status',
-  mysql          => present,
+  mysql          => true,
   mysql_username => 'panopta',
   mysql_password => 'panopta'
 }
