@@ -99,6 +99,6 @@ define panopta (
   } ->
   package {'panopta-agent':
     ensure          => installed,
-    install_options => [ '--force-yes' ]
+    install_options => '--force-yes'
   }
 }
