@@ -1,3 +1,12 @@
+##2014-10-24 - Release 0.0.3
+###Summary
+
+Minor bug fixe
+
+####Bugfixes
+- Permanent fix for the error "E: There are problems and -y was used without --force-yes"
+  This added option 'forceInstall => true/false' to allow the forced install or not.
+
 ##2014-10-20 - Release 0.0.2
 
 ###Summary

@@ -20,6 +20,10 @@
 #
 # [server_name] (optional)
 # This is the server name label.
+# 
+# [forceInstall]
+# true / false
+# See README
 #
 # === Actions:
 # 

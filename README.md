@@ -25,9 +25,11 @@ Example with usage of the panopta manifest:
 panopta{ 'title':
   manifest     => true,
   customer_key => 'abc1234',
-  fqdn         => '1.2.3.4'
+  fqdn         => '1.2.3.4',
+  forceInstall => true
 }
 ```
+### Please note that option 'forceInstall' is allowing all unauthenticated packages to be installed. Recommended is to set this setting to false if the installation has completed.
 
 Enabling a module:
 ```puppet
