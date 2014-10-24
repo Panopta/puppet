@@ -34,7 +34,15 @@ define panopta (
   $aggregator_url = undef,
   $fqdn = undef,
   $server_name = undef,
+  $forceInstall = undef
 ) {
+
+  if ($forceInstall == true) {
+    $force_install_ensure = 'present'
+  }
+  else {
+    $force_install_ensure = 'absent'
+  }
 
   if ($manifest == true) {
     $manifestFile = '/etc/panopta-agent-manifest'
@@ -87,6 +95,13 @@ define panopta (
   }
 
   # Not using the apt class here, because this adds the lsbdistcodename which the repo doesn't need
+  file { "/etc/apt/apt.conf.d/99auth":       
+    ensure  => $force_install_ensure,
+    owner   => root,
+    group   => root,
+    content => 'APT::Get::AllowUnauthenticated yes;',
+    mode    => '0644'
+  } ->
   file { 'panopta.list':
     ensure  => file,
     path    => '/etc/apt/sources.list.d/panopta.list',
@@ -98,7 +113,6 @@ define panopta (
     returns     => [ 0, 100 ] # Accept error code 0 and 100 so it does continue if apt-get update returns an error 100 (HTTP 404 errors from repositories)
   } ->
   package {'panopta-agent':
-    ensure          => installed,
-    install_options => '--force-yes'
+    ensure          => installed
   }
 }
