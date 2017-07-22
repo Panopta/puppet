@@ -7,17 +7,17 @@ define panopta::module (
 ) {
   include panopta::params
 
-  file_line {$module_name:
+  file_line {$title:
     path => $panopta::params::agent_config,
-    line => $module_name
+    line => $title
   }
 
   $params.each |String $key, String $value| {
-    file_line {"${module_name}-${key}":
+    file_line {"${title}-${key}":
       path  => $panopta::params::agent_config,
       line  => "${key}=${value}",
       match => "^${key}=",
-      after => regsubst($module_name, '\[([^\]]+)', '\[\1\\')
+      after => regsubst($title, '\[([^\]]+)', '\[\1\\')
     }
   }
 
