@@ -41,6 +41,7 @@ class panopta (
   Optional[Array]   $tags              = [],
   Optional[String]  $fqdn              = $::fqdn,
   Optional[String]  $server_name       = $::hostname,
+  Optional[Hash]    $modules           = {},
   Variant[Boolean]  $manifest          = false,
 ) {
   include panopta::install
@@ -58,6 +59,14 @@ class panopta (
      server_name       => $server_name,
      before            => Class['panopta::install']
    }
+  }
+
+  if $modules {
+    $modules.each |String $module, String $params| {
+      panopta::module {$module:
+        params => $params
+      }
+    }
   }
 
 }

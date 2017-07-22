@@ -3,5 +3,5 @@
 #
 
 class panopta::params {
-  # resources
+  $agent_config => '/etc/panopta-agent/panopta_agent.cfg',
 }
