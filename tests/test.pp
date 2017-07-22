@@ -1,4 +1,4 @@
 class {'panopta':
-  costumer_key => 'abc-def-hij',
+  customer_key => 'abc-def-hij',
   manifest     => true
 }
