@@ -2,14 +2,14 @@
 # Enables and configures the panopta modules
 #
 
-define panopta::modules (
+define panopta::module (
   Variant[Hash]                      $params,
   Variant[Enum['present','abent']]   $ensure,
   Variant[String]                    $module_name = $title,
 ) {
   include panopta::params
 
-  file_line {"${module_name}":
+  file_line {$module_name:
     ensure => present,
     path   => $panopta::params::agent_config,
     line   => $module_name
