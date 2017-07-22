@@ -9,7 +9,7 @@ define panopta::module (
 
   file_line {$title:
     path => $panopta::params::agent_config,
-    line => $title
+    line => "[$title]"
   }
 
   $params.each |String $key, String $value| {
@@ -17,7 +17,7 @@ define panopta::module (
       path  => $panopta::params::agent_config,
       line  => "${key}=${value}",
       match => "^${key}=",
-      after => regsubst($title, '\[([^\]]+)', '\[\1\\')
+      after => regsubst($title, '(.*)', '\[\1\]')
     }
   }
 
