@@ -49,6 +49,7 @@ class panopta (
     include panopta::manifest
 
     class {'panopta::manifest':
+     customer_key      => $customer_key,
      server_key        => $server_key,
      aggregator_url    => $aggregator_url,
      server_group      => $server_group,
