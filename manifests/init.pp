@@ -33,9 +33,9 @@
 
 class panopta (
   Variant[String]  $customer_key,
+  Variant[Integer] $server_group,
   Optional[String] $server_key        = undef,
   Optional[String] $aggregator_url    = undef,
-  Optional[String] $server_group      = undef,
   Optional[String] $interface_mapping = undef,
   Optional[String] $templates         = undef,
   Optional[Array]  $tags              = undef,
@@ -46,8 +46,6 @@ class panopta (
   include panopta::install
 
   if $manifest == true {
-    include panopta::manifest
-
     class {'panopta::manifest':
      customer_key      => $customer_key,
      server_key        => $server_key,

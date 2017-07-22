@@ -45,9 +45,9 @@
 
 class panopta::manifest (
   Variant[String]  $customer_key,
+  Variant[Integer] $server_group,
   Optional[String] $server_key        = undef,
   Optional[String] $aggregator_url    = undef,
-  Optional[String] $server_group      = undef,
   Optional[String] $interface_mapping = undef,
   Optional[String] $templates         = undef,
   Optional[Array]  $tags              = undef,
