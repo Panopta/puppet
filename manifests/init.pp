@@ -20,103 +20,34 @@
 #
 # [server_name] (optional)
 # This is the server name label.
-# 
+#
 # [forceInstall]
 # true / false
 # See README
 #
 # === Actions:
-# 
+#
 # * Creates, if $manifest is set to true, the /etc/panopta-agent-manifest.
 # * Adds the panopta repository
 # * Installs the panopta-agent package with --force-yes installation argument
 
-define panopta (
-  $manifest = false,
-  $customer_key = undef,
-  $server_group = undef,
-  $aggregator_url = undef,
-  $fqdn = undef,
-  $server_name = undef,
-  $forceInstall = undef
+class panopta (
+  String            $customer_key,
+  Optional[String]  $server_key,
+  Optional[String]  $aggregator_url,
+  Optional[String]  $server_group,
+  Optional[String]  $interface_mapping,
+  Optional[String]  $templates,
+  Optional[Array]   $tags,
+  Optional[String]  $fqdn        = $::fqdn,
+  Optional[String]  $server_name = $::hostname,
+  Optional[Boolean] $manifest = false,
 ) {
+  include panopta::install
 
-  if ($forceInstall == true) {
-    $force_install_ensure = 'present'
-  }
-  else {
-    $force_install_ensure = 'absent'
-  }
-
-  if ($manifest == true) {
-    $manifestFile = '/etc/panopta-agent-manifest'
-    concat { "${manifestFile}":
-      ensure				 => present,
-      ensure_newline => true,
-      before         => File['panopta.list'],
-    }
-
-    concat::fragment { 'customer_key':
-      target	=> "${manifestFile}",
-      content	=> "customer_key = ${customer_key}",
-      before  => File['panopta.list'],
-      order		=> '01'
-    }
-
-    concat::fragment { 'server_group':
-      target	=> "${manifestFile}",
-      content	=> "server_group = ${server_group}",
-      before  => File['panopta.list'],
-      order		=> '03'
-    }
-
-    if $aggregator_url != undef {
-      concat::fragment { 'aggregator_url':
-        target	=> "${manifestFile}",
-        content	=> "aggregator_url = ${aggregator_url}",
-        before  => File['panopta.list'],
-        order		=> '02'
-      }
-    }
-
-    if $fqdn != undef {
-      concat::fragment { 'fqdn':
-        target	=> "${manifestFile}",
-        content	=> "fqdn = ${fqdn}",
-        before  => File['panopta.list'],
-        order		=> '04'
-      }
-    }
-
-    if $server_name != undef {
-      concat::fragment { 'server_name':
-        target	=> "${manifestFile}",
-        content	=> "server_name = ${server_name}",
-        before  => File['panopta.list'],
-        order		=> '05'
-      }
-    }
+  if $manifest == true {
+    include 'panopta':manifest
+    Class['panopta::manifest'] { before => Class['panopta::install'] }
   }
 
-  # Not using the apt class here, because this adds the lsbdistcodename which the repo doesn't need
-  file { "/etc/apt/apt.conf.d/99auth":       
-    ensure  => $force_install_ensure,
-    owner   => root,
-    group   => root,
-    content => 'APT::Get::AllowUnauthenticated yes;',
-    mode    => '0644'
-  } ->
-  file { 'panopta.list':
-    ensure  => file,
-    path    => '/etc/apt/sources.list.d/panopta.list',
-    content => 'deb http://packages.panopta.com/deb stable main'
-  } ~>
-  exec { 'panopta_apt_update':
-    command     => 'apt-get update',
-    refreshonly => true,
-    returns     => [ 0, 100 ] # Accept error code 0 and 100 so it does continue if apt-get update returns an error 100 (HTTP 404 errors from repositories)
-  } ->
-  package {'panopta-agent':
-    ensure          => installed
-  }
 }
