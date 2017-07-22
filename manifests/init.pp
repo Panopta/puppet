@@ -64,7 +64,8 @@ class panopta (
   if $modules {
     $modules.each |String $module, Hash $params| {
       panopta::module {$module:
-        params => $params
+        params  => $params,
+        require => Package['panopta-agent']
       }
     }
   }

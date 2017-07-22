@@ -3,8 +3,7 @@
 #
 
 define panopta::module (
-  Variant[Hash]   $params,
-  Variant[String] $module_name = $title,
+  Variant[Hash]   $params
 ) {
   include panopta::params
 
