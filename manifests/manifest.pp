@@ -44,15 +44,15 @@
 
 
 class panopta::manifest (
-  String           $customer_key,
-  Optional[String] $server_key,
-  Optional[String] $aggregator_url,
-  Optional[String] $server_group,
-  Optional[String] $interface_mapping,
-  Optional[String] $templates,
-  Optional[Array]  $tags,
-  Optional[String] $fqdn        = $::fqdn,
-  Optional[String] $server_name = $::hostname
+  Variant[String]  $customer_key,
+  Optional[String] $server_key        = undef,
+  Optional[String] $aggregator_url    = undef,
+  Optional[String] $server_group      = undef,
+  Optional[String] $interface_mapping = undef,
+  Optional[String] $templates         = undef,
+  Optional[Array]  $tags              = undef,
+  Optional[String] $fqdn              = $::fqdn,
+  Optional[String] $server_name       = $::hostname,
   ) {
 
     case $server_key {

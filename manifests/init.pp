@@ -32,22 +32,22 @@
 # * Installs the panopta-agent package with --force-yes installation argument
 
 class panopta (
-  String            $customer_key,
-  Optional[String]  $server_key        = undef,
-  Optional[String]  $aggregator_url    = undef,
-  Optional[String]  $server_group      = undef,
-  Optional[String]  $interface_mapping = undef,
-  Optional[String]  $templates         = undef,
-  Optional[Array]   $tags              = undef,
-  Optional[String]  $fqdn              = $::fqdn,
-  Optional[String]  $server_name       = $::hostname,
-  Variant[Boolean]  $manifest          = false,
+  Variant[String]  $customer_key,
+  Optional[String] $server_key        = undef,
+  Optional[String] $aggregator_url    = undef,
+  Optional[String] $server_group      = undef,
+  Optional[String] $interface_mapping = undef,
+  Optional[String] $templates         = undef,
+  Optional[Array]  $tags              = undef,
+  Optional[String] $fqdn              = $::fqdn,
+  Optional[String] $server_name       = $::hostname,
+  Variant[Boolean] $manifest          = false,
 ) {
   include panopta::install
 
   if $manifest == true {
     include panopta::manifest
-    
+
     class {'panopta::manifest':
      server_key        => $server_key,
      aggregator_url    => $aggregator_url,
