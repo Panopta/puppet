@@ -10,7 +10,7 @@ class panopta::package {
     repos    => 'main',
     key      => {
       'id'     => '1C4698D2DE92D6EE8A769526B7F965468997217A',
-      'server' => 'http://packages.panopta.com/panopta.pub'
+      'source' => 'http://packages.panopta.com/panopta.pub'
     },
     notify   => Exec['panopta_apt_update']
   }
