@@ -46,7 +46,7 @@ class panopta (
   include panopta::install
 
   if $manifest == true {
-    include 'panopta':manifest
+    include panopta::manifest
     Class['panopta::manifest'] { before => Class['panopta::install'] }
   }
 
