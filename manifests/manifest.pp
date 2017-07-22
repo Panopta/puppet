@@ -46,28 +46,20 @@
 class panopta::manifest (
   Variant[String]  $customer_key,
   Variant[Integer] $server_group,
-  Optional[String] $server_key        = undef,
-  Optional[String] $aggregator_url    = undef,
-  Optional[String] $interface_mapping = undef,
-  Optional[String] $templates         = undef,
-  Optional[Array]  $tags              = undef,
+  Optional[String] $server_key        = 'UNSET',
+  Optional[String] $aggregator_url    = 'UNSET',
+  Optional[String] $interface_mapping = 'UNSET',
+  Optional[String] $templates         = 'UNSET',
+  Optional[Array]  $tags              = [],
   Optional[String] $fqdn              = $::fqdn,
   Optional[String] $server_name       = $::hostname,
   ) {
 
-    case $server_key {
-      undef: {
-        $real_server_key = seeded_rand('65565', $::fqdn)
-      }
-      false: {
-        $real_server_key = 'UNSET'
-      }
-      String: {
-        $real_server_key = $server_key
-      }
-      default: {
-        $real_server_key = seeded_rand('65565', $::fqdn)
-      }
+    if $server_key == 'UNSET' {
+      $real_server_key = seeded_rand('65565', $::fqdn)
+    }
+    else {
+      $real_server_key = $server_key
     }
 
     if $real_server_key != 'UNSET' {
