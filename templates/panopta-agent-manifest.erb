@@ -17,8 +17,8 @@ server_name = <%= @server_name %>
 <% if @interface_mapping != 'UNSET' -%>
 interface_mapping = <%= @interface_mapping %>
 <% end -%>
-<% if @template_id != 'UNSET' -%>
-templates = <%= @template_id.to_i %>
+<% if @templates != 0 -%>
+templates = <%= @templates.to_i %>
 <% end -%>
 <% if @tags.any? -%>
 tags = <%= @tags.join(',') %>

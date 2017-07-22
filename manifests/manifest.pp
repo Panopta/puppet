@@ -44,15 +44,15 @@
 
 
 class panopta::manifest (
-  Variant[String]  $customer_key,
-  Variant[Integer] $server_group,
-  Optional[String] $server_key        = 'UNSET',
-  Optional[String] $aggregator_url    = 'UNSET',
-  Optional[String] $interface_mapping = 'UNSET',
-  Optional[String] $templates         = 'UNSET',
-  Optional[Array]  $tags              = [],
-  Optional[String] $fqdn              = $::fqdn,
-  Optional[String] $server_name       = $::hostname,
+  Variant[String]   $customer_key,
+  Variant[Integer]  $server_group,
+  Optional[String]  $server_key        = 'UNSET',
+  Optional[String]  $aggregator_url    = 'UNSET',
+  Optional[String]  $interface_mapping = 'UNSET',
+  Optional[Integer] $templates         = 0,
+  Optional[Array]   $tags              = [],
+  Optional[String]  $fqdn              = $::fqdn,
+  Optional[String]  $server_name       = $::hostname,
   ) {
 
     if $server_key == 'UNSET' {
