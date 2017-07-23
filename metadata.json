@@ -4,9 +4,9 @@
   "author": "Siebren zwerver",
   "license": "Apache 2.0",
   "summary": "Unofficial Panopta module",
-  "source": "https://bitbucket.org/siebjee/panopta",
-  "project_page": "https://bitbucket.org/siebjee/panopta",
-  "issues_url": "https://bitbucket.org/siebjee/panopta/issues?status=new&status=open",
+  "source": "https://bitbucket.org/ownbaws/panopta",
+  "project_page": "https://bitbucket.org/ownbaws/panopta",
+  "issues_url": "https://bitbucket.org/ownbaws/panopta/issues?status=new&status=open",
   "tags": ["panopta"],
   "operatingsystem_support": [
     {
