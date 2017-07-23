@@ -2,7 +2,7 @@ class {'panopta':
   customer_key => 'abc-def-hij',
   manifest     => true,
   server_group => 336981,
-  modules      => {
+  plugins      => {
     'mysql' => {
       username         => 'username',
       password         => 'password',

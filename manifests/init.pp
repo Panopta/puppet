@@ -36,7 +36,7 @@
 #   customer_key => 'abc-def-hij',
 #   manifest     => true,
 #   server_group => 336981,
-#   modules      => {
+#   plugins      => {
 #     'mysql' => {
 #       username         => 'username',
 #       password         => 'password',
@@ -58,7 +58,7 @@ class panopta (
   Optional[Array]   $tags              = [],
   Optional[String]  $fqdn              = $::fqdn,
   Optional[String]  $server_name       = $::hostname,
-  Optional[Hash]    $modules           = {}
+  Optional[Hash]    $plugins           = {}
 ) {
   include panopta::install
 
@@ -75,9 +75,9 @@ class panopta (
     before            => Class['panopta::install']
   }
 
-  if $modules {
-    $modules.each |String $module, Hash $params| {
-      panopta::module {$module:
+  if $plugins {
+    $plugins.each |String $plugin, Hash $params| {
+      panopta::plugin {$plugin:
         params  => $params,
         require => Package['panopta-agent']
       }

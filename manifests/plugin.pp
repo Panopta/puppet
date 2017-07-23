@@ -1,15 +1,15 @@
-# == Define: panopta::modules
-# Enables and configures the panopta modules
+# == Define: panopta::plugins
+# Enables and configures the panopta plugins
 #
 
-define panopta::module (
+define panopta::plugin (
   Variant[Hash]   $params
 ) {
   include panopta::params
 
   file_line {$title:
     path => $panopta::params::agent_config,
-    line => "[$title]"
+    line => "[${title}]"
   }
 
   $params.each |String $key, String $value| {
