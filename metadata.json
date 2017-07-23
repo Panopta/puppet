@@ -1,17 +1,18 @@
 {
   "name": "Siebjee-panopta",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "author": "Siebren zwerver",
   "license": "Apache 2.0",
   "summary": "Unofficial Panopta module",
-  "source": "https://bitbucket.org/siebjee/panopta",
-  "project_page": "https://bitbucket.org/siebjee/panopta",
-  "issues_url": "https://bitbucket.org/siebjee/panopta/issues?status=new&status=open",
+  "source": "https://bitbucket.org/ownbaws/panopta",
+  "project_page": "https://bitbucket.org/ownbaws/panopta",
+  "issues_url": "https://bitbucket.org/ownbaws/panopta/issues?status=new&status=open",
   "tags": ["panopta"],
   "operatingsystem_support": [
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
+        "16.04",
         "14.04",
         "12.04",
         "10.04"
@@ -20,13 +21,14 @@
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
+        "8",
         "7",
         "6"
       ]
     }
   ],
   "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">=3.2.0 < 5.0.0" },
-    { "name": "puppetlabs/concat", "version_requirement": ">=1.0.0 < 5.0.0" }
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.0.0" },
+    { "name": "puppetlabs/apt", "version_requirement": ">= 4.1.0" }
   ]
 }

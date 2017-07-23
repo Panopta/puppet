@@ -1,0 +1,25 @@
+customer_key = <%= @customer_key %>
+<% if @server_key.to_s != 'UNSET' -%>
+server_key = <%= @real_server_key.to_s %>
+<% end -%>
+<% if @aggregator_url != 'UNSET' -%>
+aggregator_url = <%= @aggregator_url %>
+<% end -%>
+<% if @server_group != 'UNSET' -%>
+server_group = <%= @server_group.to_s %>
+<% end -%>
+<% if @fqdn != 'UNSET' -%>
+fqdn = <%= @fqdn %>
+<% end -%>
+<% if @server_name != 'UNSET' -%>
+server_name = <%= @server_name %>
+<% end -%>
+<% if @interface_mapping != 'UNSET' -%>
+interface_mapping = <%= @interface_mapping %>
+<% end -%>
+<% if @templates != 0 -%>
+templates = <%= @templates.to_i %>
+<% end -%>
+<% if @tags.any? -%>
+tags = <%= @tags.join(',') %>
+<% end -%>
