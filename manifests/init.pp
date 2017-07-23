@@ -58,24 +58,21 @@ class panopta (
   Optional[Array]   $tags              = [],
   Optional[String]  $fqdn              = $::fqdn,
   Optional[String]  $server_name       = $::hostname,
-  Optional[Hash]    $modules           = {},
-  Variant[Boolean]  $manifest          = false,
+  Optional[Hash]    $modules           = {}
 ) {
   include panopta::install
 
-  if $manifest == true {
-    class {'panopta::manifest':
-     customer_key      => $customer_key,
-     server_key        => $server_key,
-     aggregator_url    => $aggregator_url,
-     server_group      => $server_group,
-     interface_mapping => $interface_mapping,
-     templates         => $templates,
-     tags              => $tags,
-     fqdn              => $fqdn,
-     server_name       => $server_name,
-     before            => Class['panopta::install']
-   }
+  class {'panopta::manifest':
+    customer_key      => $customer_key,
+    server_key        => $server_key,
+    aggregator_url    => $aggregator_url,
+    server_group      => $server_group,
+    interface_mapping => $interface_mapping,
+    templates         => $templates,
+    tags              => $tags,
+    fqdn              => $fqdn,
+    server_name       => $server_name,
+    before            => Class['panopta::install']
   }
 
   if $modules {
