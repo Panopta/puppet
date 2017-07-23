@@ -2,28 +2,28 @@
 # Configures the panopta agent with or without manifest.
 #
 # === Options:
-# [manifest] (required)
-# true/present/false/absent (bool)
-#
 # [customer_key] (required)
 # Undefined  / Your panopta customer key (My Panopta > settings > My Account)
 #
 # [server_group] (required)
 # Undefined / Server group Id (int) (server_group_id parameter of the URL of the server group)
 #
+# [server_key] (optional)
+# Undefined / Server key (int) (server_key unique identifier, defailt seeded_rand($fqdn, 65565)
+#
 # [aggregator_url] (optional)
-# Undefiner / your panopta onsight appliance. (Ex: https://onsight.example.
+# Undefiner / your panopta OnSight appliance. (Ex: https://onsight.example.com)
+# Leave empty if you dont have an OnSight appliance.
+#
+# [server_name] The server name
+# Default: $::hostname
 #
 # [fqdn] (optional)
 # This is the IP or hostname where panopta runs his checks on. (FQDN / IP option when adding a server)
-# Recomended: $::ipaddress fact, or IP where you want to run your checks on.
+# Default: $::fqdn
 #
-# [server_name] (optional)
-# This is the server name label.
-#
-# [forceInstall]
-# true / false
-# See README
+# [plugins]
+# Sets panopta plugins
 #
 # === Actions:
 #
