@@ -1,3 +1,16 @@
+##2017-07-23 - Release 1.0.1
+Update: Changelog for release 1.0.0
+
+##2017-07-23 - Release 1.0.0
+Major update after a long time.
+ - Redone most of the module
+ - Removed old force install
+ - Added normal puppetlabs/apt usage for adding the panopta repository
+ - Renamed modules to plugins as this is the official naming
+ - Updated tests for my test environment
+ - Removed puppetlabs/concat dependency
+ - Fixed how plugins being handled in manifest
+
 ##2014-10-24 - Release 0.0.3
 ###Summary
 
