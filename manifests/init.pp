@@ -29,7 +29,24 @@
 #
 # * Creates, if $manifest is set to true, the /etc/panopta-agent-manifest.
 # * Adds the panopta repository
-# * Installs the panopta-agent package with --force-yes installation argument
+# * Installs the panopta-agent package
+#
+# Usage:
+# class {'panopta':
+#   customer_key => 'abc-def-hij',
+#   manifest     => true,
+#   server_group => 336981,
+#   modules      => {
+#     'mysql' => {
+#       username         => 'username',
+#       password         => 'password',
+#       extended_metrics => 'Threads_cached, Threads_connected, Threads_created, Threads_running'
+#     },
+#     'nginx' => {
+#       url => 'http://username:password@localhost:8080/server-status'
+#     }
+#   }
+# }
 
 class panopta (
   Variant[String]   $customer_key,
