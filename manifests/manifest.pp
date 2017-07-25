@@ -72,6 +72,7 @@ class panopta::manifest (
       mode    => '0644',
       owner   => root,
       group   => root,
+      replace => false,
       content => template('panopta/panopta-agent-manifest.erb')
     }
 }
