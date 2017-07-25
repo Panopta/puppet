@@ -1,3 +1,9 @@
+##2017-07-25 - Release 1.0.2
+#### Minor bugfixes & improvements
+
+Fix: server_group is no longer required.
+Fix: apt_get update is no longer called twice
+
 ##2017-07-23 - Release 1.0.1
 Update: Changelog for release 1.0.0
 

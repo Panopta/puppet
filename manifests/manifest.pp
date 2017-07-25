@@ -45,8 +45,8 @@
 
 class panopta::manifest (
   Variant[String]   $customer_key,
-  Variant[Integer]  $server_group,
   Optional[String]  $server_key        = 'UNSET',
+  Variant[Integer]  $server_group      = 'UNSET',
   Optional[String]  $aggregator_url    = 'UNSET',
   Optional[String]  $interface_mapping = 'UNSET',
   Optional[Integer] $templates         = 0,
