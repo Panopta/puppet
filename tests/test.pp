@@ -1,6 +1,5 @@
 class {'panopta':
   customer_key => 'abc-def-hij',
-  server_group => 336981,
   plugins      => {
     'mysql' => {
       username         => 'username',

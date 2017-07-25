@@ -1,12 +1,10 @@
 customer_key = <%= @customer_key %>
-<% if @server_key.to_s != 'UNSET' -%>
 server_key = <%= @real_server_key.to_s %>
-<% end -%>
 <% if @aggregator_url != 'UNSET' -%>
 aggregator_url = <%= @aggregator_url %>
 <% end -%>
-<% if @server_group != 'UNSET' -%>
-server_group = <%= @server_group.to_s %>
+<% if @server_group != 0 -%>
+server_group = <%= @server_group.to_i %>
 <% end -%>
 <% if @fqdn != 'UNSET' -%>
 fqdn = <%= @fqdn %>

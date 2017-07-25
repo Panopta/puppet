@@ -46,7 +46,7 @@
 class panopta::manifest (
   Variant[String]   $customer_key,
   Optional[String]  $server_key        = 'UNSET',
-  Variant[Integer]  $server_group      = 'UNSET',
+  Variant[Integer]  $server_group      = 0,
   Optional[String]  $aggregator_url    = 'UNSET',
   Optional[String]  $interface_mapping = 'UNSET',
   Optional[Integer] $templates         = 0,
@@ -72,6 +72,7 @@ class panopta::manifest (
       mode    => '0644',
       owner   => root,
       group   => root,
+      replace => false,
       content => template('panopta/panopta-agent-manifest.erb')
     }
 }
