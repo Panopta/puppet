@@ -2,7 +2,8 @@
 #### Minor bugfixes & improvements
 
 Fix: server_group is no longer required.
-Fix: apt_get update is no longer called twice
+Fix: apt_get update is no longer called twice.
+Fix: server_group is an int, was used as string in template.
 
 ##2017-07-23 - Release 1.0.1
 Update: Changelog for release 1.0.0
