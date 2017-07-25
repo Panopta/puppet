@@ -24,15 +24,15 @@ NOTE: Resource tiltes are not being used.
 `String` Default: unset, do not use unless it needs to proxy through the OnSight appliance.  
 `$interface_mapping`  
 `Integer` Default: unset  
-`$templates`
+`$templates`  
 `String` Optional, Default: 0 (unset)
-`$tags`
+`$tags`  
 `Array` Optional, Default: empty  
-`$fqdn`
+`$fqdn`  
 `String` Optional, Default: `$::fqdn`  
 `$server_name`  
 `String` Optional, Default: `$::hostname`  
-`$plugins`
+`$plugins`  
 `Hash` Optional, Default: empty
 
 ## Examples:
