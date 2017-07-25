@@ -8,12 +8,34 @@ This module implements and manages the Panopta agent and it's modules.
 ## Module Description
 
 The module allows you to install and configure the Panopta agent easely.
-It deploys the manifest file with the companies settings. (optinal)
-Installs and configures the Panopta agent, and adds the server into your Panopta account if the manifest is there.
+It deploys the manifest file with the companies settings.
+Installs and configures the Panopta agent, and adds the server into your Panopta account.
 
 NOTE: Resource tiltes are not being used.
 
-## Usage
+## Variables:
+`$customer_key`  
+`String` Required: you can find this at: my.panopta.com > My Account  
+`$server_key`  
+`String` Optional, defaults to `seeded_rand($::fqdn, 65565)`  
+`$server_group`  
+`Integer` Optional, Default: 0 (unset)
+`$aggregator_url`  
+`String` Default: unset, do not use unless it needs to proxy through the OnSight appliance.  
+`$interface_mapping`  
+`Integer` Default: unset  
+`$templates`
+`String` Optional, Default: 0 (unset)
+`$tags`
+`Array` Optional, Default: empty  
+`$fqdn`
+`String` Optional, Default: `$::fqdn`  
+`$server_name`  
+`String` Optional, Default: `$::hostname`  
+`$plugins`
+`Hash` Optional, Default: empty
+
+## Examples:
 ###Example with only required parameters
 ```puppet
 class {'panopta':
