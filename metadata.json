@@ -2,7 +2,7 @@
   "name": "Siebjee-panopta",
   "version": "1.0.2",
   "author": "Siebren zwerver",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "summary": "Unofficial Panopta module",
   "source": "https://bitbucket.org/ownbaws/panopta",
   "project_page": "https://bitbucket.org/ownbaws/panopta",
@@ -27,8 +27,14 @@
       ]
     }
   ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.7.0 < 5.0.0"
+    }
+  ],
   "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.0.0" },
-    { "name": "puppetlabs/apt", "version_requirement": ">= 4.1.0" }
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.0.0 < 5.0.0" },
+    { "name": "puppetlabs/apt", "version_requirement": ">= 4.1.0 < 5.0.0" }
   ]
 }
