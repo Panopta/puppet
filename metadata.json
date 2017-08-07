@@ -1,13 +1,13 @@
 {
-  "name": "Siebjee-panopta",
-  "version": "1.0.2",
-  "author": "Siebren zwerver",
+  "name": "panopta-panopta",
+  "version": "1.0.3",
+  "author": "Siebren Zwerver",
   "license": "Apache-2.0",
-  "summary": "Unofficial Panopta module",
-  "source": "https://bitbucket.org/ownbaws/panopta",
-  "project_page": "https://bitbucket.org/ownbaws/panopta",
-  "issues_url": "https://bitbucket.org/ownbaws/panopta/issues?status=new&status=open",
-  "tags": ["panopta"],
+  "summary": "Official Panopta module",
+  "source": "https://github.com/panopta/puppet",
+  "project_page": "https://github.com/panopta/puppet",
+  "issues_url": "https://github.com/panopta/puppet/issues",
+  "tags": ["panopta","monitoring","alerting","reporting"],
   "operatingsystem_support": [
     {
       "operatingsystem": "Ubuntu",
@@ -30,7 +30,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 4.7.0 < 5.0.0"
+      "version_requirement": ">= 4.7.0 < 6.0.0"
     }
   ],
   "dependencies": [
