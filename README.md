@@ -83,20 +83,13 @@ Please refer to the documentation of Panopta: http://help.panopta.com/v1.0/docs/
 ## Limitations
 Supported Operating Systems
 
+### Ubuntu
 * Ubuntu 10.04
 * Ubuntu 12.04
 * Ubuntu 14.04
 * Ubuntu 16.04
 
-* Debian 6
-* Debian 7
-* Debian 8
-
-This Module has been tested on
-
-* Ubuntu 12.04
-* Ubuntu 14.04
-* Ubuntu 16.04
+### Debian
 * Debian 6
 * Debian 7
 * Debian 8
