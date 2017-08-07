@@ -1,3 +1,15 @@
+##2017-08-07 - Release 1.0.3
+### Summary
+Minor update and fixes
+
+### Updates
+- Promoted to official module by [Panopta](https://www.panopta.com)
+- Minor update in the Readme
+
+### Fixes
+- Dependencies contain unbounded ranges.
+- Unrecognized license in metadata.
+
 ##2017-07-25 - Release 1.0.2
 #### Minor bugfixes & improvements
 
@@ -22,7 +34,7 @@ Major update after a long time.
 ##2014-10-24 - Release 0.0.3
 ###Summary
 
-Minor bug fixe
+Minor bug fixes
 
 ####Bugfixes
 - Permanent fix for the error "E: There are problems and -y was used without --force-yes"
