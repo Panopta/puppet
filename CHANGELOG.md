@@ -1,3 +1,10 @@
+## 2018-04-27 - Release 1.1.1
+### Sumary
+Minor update
+
+### Updates
+- Added manifest support for counter measures
+
 ## 2017-08-07 - Release 1.0.3
 ### Summary
 Minor update and fixes
