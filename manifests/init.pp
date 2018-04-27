@@ -22,6 +22,10 @@
 # This is the IP or hostname where panopta runs his checks on. (FQDN / IP option when adding a server)
 # Default: $::fqdn
 #
+#[enable_counter_measures] (optional)
+# Set to true to enable counter measures at provisioning
+# Default: false
+#
 # [plugins]
 # Sets panopta plugins
 #
@@ -50,29 +54,31 @@
 
 class panopta (
   Variant[String]   $customer_key,
-  Optional[String]  $server_key        = 'UNSET',
-  Variant[Integer]  $server_group      = 0,
-  Optional[String]  $aggregator_url    = 'UNSET',
-  Optional[String]  $interface_mapping = 'UNSET',
-  Optional[Integer] $templates         = 0,
-  Optional[Array]   $tags              = [],
-  Optional[String]  $fqdn              = $::fqdn,
-  Optional[String]  $server_name       = $::hostname,
-  Optional[Hash]    $plugins           = {}
+  Optional[String]  $server_key              = 'UNSET',
+  Variant[Integer]  $server_group            = 0,
+  Optional[String]  $aggregator_url          = 'UNSET',
+  Optional[String]  $interface_mapping       = 'UNSET',
+  Optional[Integer] $templates               = 0,
+  Optional[Array]   $tags                    = [],
+  Optional[String]  $fqdn                    = $::fqdn,
+  Optional[String]  $server_name             = $::hostname,
+  Optional[Hash]    $plugins                 = {},
+  Variant[Boolean]  $enable_counter_measures = false,
 ) {
   include panopta::install
 
   class {'panopta::manifest':
-    customer_key      => $customer_key,
-    server_key        => $server_key,
-    aggregator_url    => $aggregator_url,
-    server_group      => $server_group,
-    interface_mapping => $interface_mapping,
-    templates         => $templates,
-    tags              => $tags,
-    fqdn              => $fqdn,
-    server_name       => $server_name,
-    before            => Class['panopta::install']
+    customer_key            => $customer_key,
+    server_key              => $server_key,
+    aggregator_url          => $aggregator_url,
+    server_group            => $server_group,
+    interface_mapping       => $interface_mapping,
+    templates               => $templates,
+    tags                    => $tags,
+    fqdn                    => $fqdn,
+    server_name             => $server_name,
+    enable_counter_measures => $enable_counter_measures,
+    before                  => Class['panopta::install']
   }
 
   if $plugins {

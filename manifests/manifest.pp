@@ -45,6 +45,7 @@
 
 class panopta::manifest (
   Variant[String]   $customer_key,
+  Variant[Boolean]  $enable_counter_measures,
   Optional[String]  $server_key        = 'UNSET',
   Variant[Integer]  $server_group      = 0,
   Optional[String]  $aggregator_url    = 'UNSET',

@@ -34,6 +34,8 @@ NOTE: Resource tiltes are not being used.
 `String` Optional, Default: `$::hostname`  
 `$plugins`  
 `Hash` Optional, Default: empty
+`$enable_counter_measures`
+`Boolean` Optional, Default: `false`
 
 ## Examples:
 ###Example with only required parameters
